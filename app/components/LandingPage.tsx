@@ -18,6 +18,7 @@ import {
   Send,
   CalendarClock,
 } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 
 const WHATSAPP_NUMBER = "+4917632574296"; // E.164
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -476,6 +477,8 @@ function iconFor(key: string) {
 
 export default function LandingPage() {
   const [lang, setLang] = useState<LangKey>("de");
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+
   const t = useMemo(() => DICT[lang], [lang]);
 
   useEffect(() => {
@@ -738,6 +741,8 @@ export default function LandingPage() {
         <h2 className="text-2xl font-bold text-slate-900 mb-6">
           {t.locale === "de" ? "Galerie" : "Gallery"}
         </h2>
+
+        {/* ✅ GALLERY GRID */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
             "/gallery1.png",
@@ -750,7 +755,8 @@ export default function LandingPage() {
             <motion.div
               key={i}
               whileHover={{ scale: 1.03 }}
-              className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md bg-white"
+              className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md bg-white cursor-pointer"
+              onClick={() => setActiveImageIndex(i)}
             >
               <img
                 src={src}
@@ -761,7 +767,66 @@ export default function LandingPage() {
             </motion.div>
           ))}
         </div>
+
+        {/* ✅ LIGHTBOX OVERLAY */}
+        <AnimatePresence>
+          {activeImageIndex !== null && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <button
+                className="absolute top-5 right-5 text-white text-3xl font-bold"
+                onClick={() => setActiveImageIndex(null)}
+              >
+                ✕
+              </button>
+
+              {/* Image */}
+              <motion.img
+                key={activeImageIndex}
+                src={
+                  [
+                    "/gallery1.png",
+                    "/gallery2.png",
+                    "/gallery3.png",
+                    "/gallery4.png",
+                    "/gallery5.png",
+                    "/gallery6.png",
+                  ][activeImageIndex!]
+                }
+                alt="Preview"
+                className="max-w-[90%] max-h-[80%] rounded-2xl shadow-2xl object-contain"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.25 }}
+              />
+
+              {/* Navigation arrows */}
+              <button
+                className="absolute left-5 text-white text-4xl"
+                onClick={() =>
+                  setActiveImageIndex(
+                    (activeImageIndex! - 1 + 6) % 6 // wrap around
+                  )
+                }
+              >
+                ‹
+              </button>
+              <button
+                className="absolute right-5 text-white text-4xl"
+                onClick={() => setActiveImageIndex((activeImageIndex! + 1) % 6)}
+              >
+                ›
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
+
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white/70">
         <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-600 flex flex-wrap gap-3 justify-between">
