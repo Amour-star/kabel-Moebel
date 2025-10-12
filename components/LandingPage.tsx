@@ -740,7 +740,7 @@ export default function LandingPage() {
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            "/gallery1.jpg",
+            "/Kabelmanagement.png",
             "/gallery2.jpg",
             "/gallery3.jpg",
             "/gallery4.jpg",
