@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wood-bg: #f2e2ca;         /* warm beige background */
+  --wood-border: #c5a57a;     /* soft brown edge */
+  --wood-text: #4b2e12;       /* deep brown text */
+  --wood-accent: #b97a2c;     /* golden-brown buttons */
+  --wood-accent-dark: #8b5a1c;/* darker hover tone */
+  --wood-highlight: #ffd79a;  /* subtle highlight */
 }
 
 @theme inline {
@@ -19,8 +23,9 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  scroll-behavior: smooth;
+  background: var(--wood-bg);
+  color: var(--wood-text);
+  font-family: system-ui, sans-serif;
 }

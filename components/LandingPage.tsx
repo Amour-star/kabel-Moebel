@@ -502,18 +502,22 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
+      <header className="sticky top-0 z-40 backdrop-blur bg-[var(--wood-bg)] border-b border-[var(--wood-border)] shadow-md">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-sm">
-              <Wrench className="w-5 h-5" />
-            </span>
-            <div className="font-semibold">{t.brand}</div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-10 w-10 rounded-xl shadow-sm bg-white p-1"
+            />
+            <div className="font-semibold text-[var(--wood-text)] text-lg tracking-wide">
+              {t.brand}
+            </div>
           </div>
           <div className="flex items-center gap-2">
-            <Languages className="w-5 h-5 opacity-70" />
+            <Languages className="w-5 h-5 opacity-70 text-[var(--wood-accent)]" />
             <select
-              className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm"
+              className="rounded-xl border border-[var(--wood-border)] bg-[var(--wood-bg)] px-3 py-2 text-sm shadow-sm text-[var(--wood-text)]"
               value={lang}
               onChange={(e) => setLang(e.target.value as LangKey)}
             >
@@ -523,13 +527,6 @@ export default function LandingPage() {
                 </option>
               ))}
             </select>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-3 py-2 text-white text-sm shadow hover:shadow-md"
-            >
-              <MessageCircle className="w-4 h-4" /> {t.cta_secondary}
-            </a>
           </div>
         </div>
       </header>
@@ -558,7 +555,7 @@ export default function LandingPage() {
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
-                className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-white shadow hover:shadow-md"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[var(--wood-accent)] px-5 py-3 text-white shadow hover:bg-[var(--wood-accent-dark)] transition"
               >
                 <MessageCircle className="w-5 h-5" /> {t.cta_primary}
               </a>
@@ -599,7 +596,7 @@ export default function LandingPage() {
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.services_title}
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -624,7 +621,7 @@ export default function LandingPage() {
 
       {/* Process */}
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.process_title}
         </h2>
         <div className="grid sm:grid-cols-3 gap-4">
@@ -633,7 +630,7 @@ export default function LandingPage() {
               key={i}
               className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
             >
-              <div className="flex items-center gap-2 text-emerald-700 font-medium">
+              <div className="flex items-center gap-2 text-[var(--wood-accent-dark)] font-medium">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 border border-emerald-100">
                   {i === 0 ? (
                     <MessageCircle className="w-5 h-5" />
@@ -653,7 +650,7 @@ export default function LandingPage() {
 
       {/* Area */}
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.area_title}
         </h2>
         <p className="text-slate-700">{t.area_text}</p>
@@ -705,7 +702,7 @@ export default function LandingPage() {
       </section>
       {/* Price List */}
       <section id="prices" className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.locale === "de" ? "Preisübersicht" : "Price List"}
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
