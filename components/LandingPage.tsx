@@ -18,6 +18,7 @@ import {
   Send,
   CalendarClock,
 } from "lucide-react";
+import GallerySection from "./GallerySection";
 
 const WHATSAPP_NUMBER = "+4917632574296"; // E.164
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -734,30 +735,8 @@ export default function LandingPage() {
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">
-          {t.locale === "de" ? "Galerie" : "Gallery"}
-        </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {[
-            "/Kabelmanagement.png",
-            "/gallery2.jpg",
-            "/gallery3.jpg",
-            "/gallery4.jpg",
-            "/gallery5.jpg",
-            "/gallery6.jpg",
-          ].map((src, i) => (
-            <motion.img
-              key={i}
-              src={src}
-              alt={`Gallery ${i + 1}`}
-              className="rounded-2xl shadow-sm hover:shadow-md cursor-pointer object-cover aspect-[4/3]"
-              whileHover={{ scale: 1.03 }}
-              onClick={() => window.open(src, "_blank")}
-            />
-          ))}
-        </div>
-      </section>
+      <GallerySection />
+
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white/70">
         <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-600 flex flex-wrap gap-3 justify-between">
