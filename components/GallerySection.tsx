@@ -17,7 +17,7 @@ export default function GallerySection() {
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="mx-auto max-w-6xl px-4 py-12">
+    <section id="gallery" className="mx-auto max-w-6xl px-4 py-6">
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Galerie</h2>
 
       {/* ✅ Image grid */}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -534,7 +535,7 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(16,185,129,0.15),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.12),transparent_40%)]" />
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="mx-auto max-w-6xl px-4 py-6 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
@@ -570,7 +571,7 @@ export default function LandingPage() {
               <MapPin className="w-4 h-4" /> {t.area_text}
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { key: "cable", label: "Cable" },
@@ -590,12 +591,46 @@ export default function LandingPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
-
+      {/* IKEA / POCO / Bauhaus / Toom Expertise */}
+      <section id="brands" className="mx-auto max-w-6xl px-4 py-1 text-center">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
+          {t.locale === "de"
+            ? "Experten für IKEA, POCO, Bauhaus & Toom Möbel"
+            : "Experts for IKEA, POCO, Bauhaus & Toom furniture"}
+        </h2>
+        <p className="text-[var(--wood-text)] mb-8">
+          {t.locale === "de"
+            ? "Wir montieren und demontieren Möbel von führenden Marken mit Erfahrung, Präzision und passenden Werkzeugen."
+            : "We assemble and disassemble furniture from leading brands with experience, precision and the right tools."}
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <img
+            src="/ikea.png"
+            alt="IKEA"
+            className="h-12 sm:h-16 object-contain"
+          />
+          <img
+            src="/poco.png"
+            alt="POCO"
+            className="h-10 sm:h-14 object-contain"
+          />
+          <img
+            src="/bauhaus.png"
+            alt="Bauhaus"
+            className="h-10 sm:h-14 object-contain"
+          />
+          <img
+            src="/toom.png"
+            alt="Toom"
+            className="h-10 sm:h-14 object-contain"
+          />
+        </div>
+      </section>
       {/* Services */}
-      <section id="services" className="mx-auto max-w-6xl px-4 py-12">
+      <section id="services" className="mx-auto max-w-6xl px-4 py-6">
         <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.services_title}
         </h2>
@@ -620,7 +655,7 @@ export default function LandingPage() {
       </section>
 
       {/* Process */}
-      <section className="mx-auto max-w-6xl px-4 py-12">
+      <section className="mx-auto max-w-6xl px-4 py-6">
         <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.process_title}
         </h2>
@@ -649,7 +684,7 @@ export default function LandingPage() {
       </section>
 
       {/* Area */}
-      <section className="mx-auto max-w-6xl px-4 py-12">
+      <section className="mx-auto max-w-6xl px-4 py-6">
         <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.area_title}
         </h2>
@@ -657,7 +692,7 @@ export default function LandingPage() {
       </section>
 
       {/* Contact / Chat */}
-      <section id="contact" className="mx-auto max-w-6xl px-4 py-12">
+      <section id="contact" className="mx-auto max-w-6xl px-4 py-6">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-xl font-semibold">{t.contact_title}</h3>
@@ -700,43 +735,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      {/* IKEA / POCO / Bauhaus / Toom Expertise */}
-      <section id="brands" className="mx-auto max-w-6xl px-4 py-12 text-center">
-        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
-          {t.locale === "de"
-            ? "Experten für IKEA, POCO, Bauhaus & Toom Möbel"
-            : "Experts for IKEA, POCO, Bauhaus & Toom furniture"}
-        </h2>
-        <p className="text-[var(--wood-text)] mb-8">
-          {t.locale === "de"
-            ? "Wir montieren und demontieren Möbel von führenden Marken mit Erfahrung, Präzision und passenden Werkzeugen."
-            : "We assemble and disassemble furniture from leading brands with experience, precision and the right tools."}
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          <img
-            src="/ikea.png"
-            alt="IKEA"
-            className="h-12 sm:h-16 object-contain"
-          />
-          <img
-            src="/poco.png"
-            alt="POCO"
-            className="h-10 sm:h-14 object-contain"
-          />
-          <img
-            src="/bauhaus.png"
-            alt="Bauhaus"
-            className="h-10 sm:h-14 object-contain"
-          />
-          <img
-            src="/toom.png"
-            alt="Toom"
-            className="h-10 sm:h-14 object-contain"
-          />
-        </div>
-      </section>
+
       {/* Price List */}
-      <section id="prices" className="mx-auto max-w-6xl px-4 py-12">
+      <section id="prices" className="mx-auto max-w-6xl px-4 py-6">
         <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
           {t.locale === "de" ? "Preisübersicht" : "Price List"}
         </h2>
