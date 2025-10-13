@@ -700,6 +700,41 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      {/* IKEA / POCO / Bauhaus / Toom Expertise */}
+      <section id="brands" className="mx-auto max-w-6xl px-4 py-12 text-center">
+        <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
+          {t.locale === "de"
+            ? "Experten für IKEA, POCO, Bauhaus & Toom Möbel"
+            : "Experts for IKEA, POCO, Bauhaus & Toom furniture"}
+        </h2>
+        <p className="text-[var(--wood-text)] mb-8">
+          {t.locale === "de"
+            ? "Wir montieren und demontieren Möbel von führenden Marken mit Erfahrung, Präzision und passenden Werkzeugen."
+            : "We assemble and disassemble furniture from leading brands with experience, precision and the right tools."}
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <img
+            src="/ikea.png"
+            alt="IKEA"
+            className="h-12 sm:h-16 object-contain"
+          />
+          <img
+            src="/poco.png"
+            alt="POCO"
+            className="h-10 sm:h-14 object-contain"
+          />
+          <img
+            src="/bauhaus.png"
+            alt="Bauhaus"
+            className="h-10 sm:h-14 object-contain"
+          />
+          <img
+            src="/toom.png"
+            alt="Toom"
+            className="h-10 sm:h-14 object-contain"
+          />
+        </div>
+      </section>
       {/* Price List */}
       <section id="prices" className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-2xl font-bold text-[var(--wood-text)] mb-6 border-b-2 border-[var(--wood-accent)] inline-block pb-1">
