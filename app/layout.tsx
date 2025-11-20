@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   verification: {
     // ❗ Only the token, no "google-site-verification="
-    google: "JOaf1Eq0ESpFbg3vlOpRV71a5msF-s6qdFFZvxiLnxU",
+    google: "uIlBaOBRkIZ_4RnbEHZhrLUXqPA3alvQHx1d6i-Be8o",
   },
 };
 
