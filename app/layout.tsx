@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   verification: {
-    google:
-      "google-site-verification=JOaf1Eq0ESpFbg3vlOpRV71a5msF-s6qdFFZvxiLnxU",
+    // ❗ Only the token, no "google-site-verification="
+    google: "JOaf1Eq0ESpFbg3vlOpRV71a5msF-s6qdFFZvxiLnxU",
   },
 };
 
