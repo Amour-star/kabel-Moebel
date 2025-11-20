@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       "Kabelmanagement, Möbelmontage, Entsorgung, Küche & Schlafzimmer in NRW – schnell, sauber, zuverlässig.",
     images: ["/og-image.jpg"],
   },
+  verification: {
+    google:
+      "google-site-verification=JOaf1Eq0ESpFbg3vlOpRV71a5msF-s6qdFFZvxiLnxU",
+  },
 };
 
 export default function RootLayout({
